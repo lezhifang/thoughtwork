@@ -22,6 +22,7 @@ public class BowlingGame {
        for(int i = 0; i < n-2; i++){
     	   int GridScore = 0;
     	   int iTmp = i;
+    	 
     	   if(bowGrid[iTmp].equals("X")){
     		   GridScore += 10;
     		   iTmp++;
