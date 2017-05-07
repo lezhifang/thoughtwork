@@ -5,7 +5,7 @@ public class BowlingGame {
     public int getBowlingScore(String bowlingCode) {
     	int n = 10;
     	String[] bowGridTmp = bowlingCode.split("\\|");
-        int cunt = 0
+        int cunt = 0;
         for(int i = 0; i < bowGridTmp.length; i++){
         	if(bowGridTmp[i].equals("")){
         		cunt++;
@@ -18,7 +18,7 @@ public class BowlingGame {
         		bowGrid[j++] = bowGridTmp[i];
         	}
         }
-       int sum = 0
+       int sum = 0;
        for(int i = 0; i < n-2; i++){
     	   int GridScore = 0;
     	   int iTmp = i;
