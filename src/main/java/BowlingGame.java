@@ -3,9 +3,9 @@ package main.java;
 public class BowlingGame {
 
     public int getBowlingScore(String bowlingCode) {
-    	int n = 10;//代表格子总数
-    	String[] bowGridTmp = bowlingCode.split("\\|");//实现以"|"这个划分
-        int cunt = 0;//用来计算空字符串个数
+    	int n = 10;
+    	String[] bowGridTmp = bowlingCode.split("\\|");
+        int cunt = 0
         for(int i = 0; i < bowGridTmp.length; i++){
         	if(bowGridTmp[i].equals("")){
         		cunt++;
@@ -18,27 +18,25 @@ public class BowlingGame {
         		bowGrid[j++] = bowGridTmp[i];
         	}
         }
-       int sum = 0;//总分
+       int sum = 0
        for(int i = 0; i < n-2; i++){
     	   int GridScore = 0;
     	   int iTmp = i;
-    	 //第1种情况
-    	   if(bowGrid[iTmp].equals("X")){//第一重判断
+    	   if(bowGrid[iTmp].equals("X")){
     		   GridScore += 10;
     		   iTmp++;
     		   
-    		   if(bowGrid[iTmp].equals("X")){//第二重判断
+    		   if(bowGrid[iTmp].equals("X")){
     			   GridScore += 10;
         		   iTmp++;
         		   
-        		   if(bowGrid[iTmp].equals("X")){//第三重判断
+        		   if(bowGrid[iTmp].equals("X")){
         			   GridScore += 10;
-            		   //iTmp++;
         		   }else{
         			   if((bowGrid[iTmp].charAt(0))>='1'&&(bowGrid[iTmp].charAt(0))<='9'){
         				   GridScore += (Integer.parseInt((bowGrid[iTmp].charAt(0))+""));
         			   }
-        		   }//第三重判断结束
+        		   }
     		   }else{
     			   if((bowGrid[iTmp].charAt(1))=='/'){
     				   GridScore += 10;
@@ -48,26 +46,26 @@ public class BowlingGame {
             				   GridScore += (Integer.parseInt((bowGrid[iTmp].charAt(l))+""));
     				   }
     			   }
-    		   }//第二重判断结束
+    		   }
     		   
-    	   }else{//第2种情况
-    		   if((bowGrid[iTmp].charAt(1))=='/'){//第一重判断
+    	   }else{
+    		   if((bowGrid[iTmp].charAt(1))=='/'){
     			   GridScore += 10;
     			   iTmp++;
-    			   if(bowGrid[iTmp].equals("X")){//第二重判断
+    			   if(bowGrid[iTmp].equals("X")){
     				   GridScore += 10;
     			   }else{
     				   if((bowGrid[iTmp].charAt(0))>='1'&&(bowGrid[iTmp].charAt(0))<='9')
         				   GridScore += (Integer.parseInt((bowGrid[iTmp].charAt(0))+""));
-    			   }//第二重判断结束
+    			   }
     		   
-    		   }else{//第3种情况
+    		   }else{
     			   for(int l=0;l<2;l++){
 					   if((bowGrid[iTmp].charAt(l))>='1'&&(bowGrid[iTmp].charAt(l))<='9')
         				   GridScore += (Integer.parseInt((bowGrid[iTmp].charAt(l))+""));
 				   }
     		   }
-    	   }//第一重判断结束
+    	   }
     	   
     	   sum += GridScore;
        }
@@ -77,7 +75,7 @@ public class BowlingGame {
        for(int i = n-2; i < n; i++){
     	   int GridScore = 0;
     	   int iTmp = i;
-    	   if(bowGrid[n-1].equals("X")){//2次额外机会
+    	   if(bowGrid[n-1].equals("X")){
     		   if(i != (n-1)){
     			   if(bowGrid[iTmp].equals("X")){
     				   GridScore += 20;
@@ -99,7 +97,7 @@ public class BowlingGame {
     				   }
     			   }
     			  
-    		   }else{//i == (n-1)
+    		   }else{
     			   GridScore += 10;
     			   iTmp++;
     			   for(int l=0;l<2;l++){
@@ -111,10 +109,10 @@ public class BowlingGame {
 						   }
 					   }
 				   }
-    		   }//2次额外机会结束
+    		   }
     		 
     	   }else{
-    		   if((bowGrid[n-1].charAt(1))=='/'){//1次额外机会
+    		   if((bowGrid[n-1].charAt(1))=='/'){
     			   if(i != (n-1)){
     				   if(bowGrid[iTmp].equals("X")){
     					   GridScore += 20;
@@ -131,7 +129,7 @@ public class BowlingGame {
             				   }
         				   }
         			   }
-    			   }else{//i == (n-1)
+    			   }else{
     				   GridScore += 10;
     				   iTmp++;
     				   if(bowGrid[iTmp].equals("X")){
@@ -143,7 +141,7 @@ public class BowlingGame {
 					   }
     			   }
     			   
-    		   }else{//没有额外机会
+    		   }else{
     			   if(i != (n-1)){
     				   if(bowGrid[iTmp].equals("X")){
     					   GridScore += 10;
@@ -165,7 +163,7 @@ public class BowlingGame {
             				   }
         				   }
         			   } 
-    			   }else{//i == (n-1)
+    			   }else{
     				   for(int l=0;l<2;l++){
     					   if((bowGrid[iTmp].charAt(l))>='1'&&(bowGrid[iTmp].charAt(l))<='9')
             				   GridScore += (Integer.parseInt((bowGrid[iTmp].charAt(l))+""));
