@@ -1,5 +1,7 @@
-import org.junit.Test;
+package test.java;
 
+import main.java.BowlingGame;
+import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class BowlingGameTest {
