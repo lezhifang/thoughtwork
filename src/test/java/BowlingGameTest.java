@@ -1,10 +1,11 @@
 package test.java;
 
-import main.java.BowlingGame;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import main.java.BowlingGame;
+
 
 public class BowlingGameTest {
 
